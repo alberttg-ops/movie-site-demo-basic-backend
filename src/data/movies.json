@@ -1,0 +1,405 @@
+{
+  "dates": {
+    "maximum": "2026-01-14",
+    "minimum": "2025-12-03"
+  },
+  "page": 4,
+  "results": [
+    {
+      "adult": false,
+      "backdrop_path": "/ytCi1wg6YHpYcFRWCO2jpzN31Kf.jpg",
+      "genre_ids": [
+        28,
+        53,
+        80
+      ],
+      "id": 1196573,
+      "original_language": "en",
+      "original_title": "She Rides Shotgun",
+      "overview": "Newly released from prison and marked for death by unrelenting enemies, Nate must now protect his estranged 11-year-old daughter, Polly, at all costs. With scant resources and no one to trust, Nate and Polly forge a bond under fire as he shows her how to fight and survive—and she teaches him the true meaning of unconditional love.",
+      "popularity": 17.6419,
+      "poster_path": "/nvqW8mOm818QDio3GKKmPLK8kXj.jpg",
+      "release_date": "2025-07-31",
+      "title": "She Rides Shotgun",
+      "video": false,
+      "vote_average": 7.1,
+      "vote_count": 196
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/yt9m5CiU2MZkQoNl1kqLPODNR4t.jpg",
+      "genre_ids": [
+        18,
+        10749
+      ],
+      "id": 858024,
+      "original_language": "en",
+      "original_title": "Hamnet",
+      "overview": "The powerful story of love and loss that inspired the creation of Shakespeare's timeless masterpiece, Hamlet.",
+      "popularity": 18.0825,
+      "poster_path": "/71KNp6RiOQTbs8Fn1DagrFQrZmx.jpg",
+      "release_date": "2025-11-26",
+      "title": "Hamnet",
+      "video": false,
+      "vote_average": 7.6,
+      "vote_count": 24
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/zhoMwQofjgVec5Sin05hWECJtVQ.jpg",
+      "genre_ids": [
+        18,
+        53,
+        80
+      ],
+      "id": 1456349,
+      "original_language": "fa",
+      "original_title": "یک تصادف ساده",
+      "overview": "An unassuming mechanic is reminded of his time in an Iranian prison when he encounters a man he suspects to be his sadistic jailhouse captor.",
+      "popularity": 18.0398,
+      "poster_path": "/eNYGj2DG3n8OrVPTfYunpPW9uas.jpg",
+      "release_date": "2025-09-27",
+      "title": "It Was Just an Accident",
+      "video": false,
+      "vote_average": 7.2,
+      "vote_count": 257
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/dwN0kPGrLbFRxyL3F3J3t4ShQx.jpg",
+      "genre_ids": [
+        878,
+        28,
+        12
+      ],
+      "id": 18,
+      "original_language": "fr",
+      "original_title": "Le Cinquième Élément",
+      "overview": "In 2257, a taxi driver is unintentionally given the task of saving a young girl who is part of the key that will ensure the survival of humanity.",
+      "popularity": 17.8095,
+      "poster_path": "/fPtlCO1yQtnoLHOwKtWz7db6RGU.jpg",
+      "release_date": "1997-05-02",
+      "title": "The Fifth Element",
+      "video": false,
+      "vote_average": 7.562,
+      "vote_count": 11360
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/8VGiUMkjdevsVYHZ8tIpHl6EbbF.jpg",
+      "genre_ids": [
+        16,
+        12,
+        14,
+        10751,
+        28,
+        35
+      ],
+      "id": 974663,
+      "original_language": "en",
+      "original_title": "200% Wolf",
+      "overview": "When Freddy Lupin's wayward wish transforms him into a werewolf and deposits a mischievous moon sprite on Earth, Freddy must restore the cosmic order before the earth and moon collide.",
+      "popularity": 18.0203,
+      "poster_path": "/pHGB9jN31cDNKhR0VRNZsXZkGZQ.jpg",
+      "release_date": "2024-07-04",
+      "title": "200% Wolf",
+      "video": false,
+      "vote_average": 6.014,
+      "vote_count": 35
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/dT1p0K1szMAUBuE2bibouDQdNb8.jpg",
+      "genre_ids": [
+        27,
+        53,
+        878
+      ],
+      "id": 1272837,
+      "original_language": "en",
+      "original_title": "28 Years Later: The Bone Temple",
+      "overview": "Dr. Kelson finds himself in a shocking new relationship - with consequences that could change the world as they know it - and Spike's encounter with Jimmy Crystal becomes a nightmare he can't escape.",
+      "popularity": 21.1061,
+      "poster_path": "/j44XuLdsoSnlSuMgdKmcju4vM95.jpg",
+      "release_date": "2026-01-14",
+      "title": "28 Years Later: The Bone Temple",
+      "video": false,
+      "vote_average": 0,
+      "vote_count": 0
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/5zMuq6n6L8u9Ks29JAurPICXKqu.jpg",
+      "genre_ids": [
+        18,
+        35
+      ],
+      "id": 1208348,
+      "original_language": "en",
+      "original_title": "Rental Family",
+      "overview": "An American actor in Tokyo struggles to find purpose until he lands an unusual gig: working for a Japanese 'rental family' agency, playing stand-in roles for strangers. As he immerses himself in his clients' worlds, he begins to form genuine bonds that blur the lines between performance and reality.",
+      "popularity": 16.985,
+      "poster_path": "/dGRZ55srJoK6TcjPTfHe701UWq0.jpg",
+      "release_date": "2025-11-20",
+      "title": "Rental Family",
+      "video": false,
+      "vote_average": 7.714,
+      "vote_count": 35
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/sy0vo1cmpKqwPRiMUiJ45jyLsX7.jpg",
+      "genre_ids": [
+        10751,
+        35,
+        14
+      ],
+      "id": 8871,
+      "original_language": "en",
+      "original_title": "How the Grinch Stole Christmas",
+      "overview": "The Grinch decides to rob Whoville of Christmas - but a dash of kindness from little Cindy Lou Who and her family may be enough to melt his heart...",
+      "popularity": 14.8202,
+      "poster_path": "/1WZbbPApEivA421gCOluuzMMKCk.jpg",
+      "release_date": "2000-11-17",
+      "title": "How the Grinch Stole Christmas",
+      "video": false,
+      "vote_average": 6.785,
+      "vote_count": 8099
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/x4OYcZVHggyZHOrvkCo2HH9kLkF.jpg",
+      "genre_ids": [
+        18,
+        10749
+      ],
+      "id": 4348,
+      "original_language": "en",
+      "original_title": "Pride & Prejudice",
+      "overview": "A story of love and life among the landed English gentry during the Georgian era. Mr. Bennet is a gentleman living in Hertfordshire with his overbearing wife and five daughters, but if he dies their house will be inherited by a distant cousin whom they have never met, so the family's future happiness and security is dependent on the daughters making good marriages.",
+      "popularity": 15.4151,
+      "poster_path": "/zu0gBfUFW3gsr3kQ6CCJ7StB51v.jpg",
+      "release_date": "2005-09-16",
+      "title": "Pride & Prejudice",
+      "video": false,
+      "vote_average": 8.053,
+      "vote_count": 8554
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/kHOfxq7cMTXyLbj0UmdoGhT540O.jpg",
+      "genre_ids": [
+        878,
+        28,
+        35
+      ],
+      "id": 507244,
+      "original_language": "en",
+      "original_title": "Afterburn",
+      "overview": "Set against the backdrop of a postapocalyptic Earth whose Eastern Hemisphere was destroyed by a massive solar flare, leaving what life remains mutated from radiation and fallout. The story revolves around a group of treasure hunters who extract such objects as the Mona Lisa, the Rosetta Stone and the Crown Jewels while facing rival hunters, mutants and pirates.",
+      "popularity": 15.4271,
+      "poster_path": "/hrze9JXp2QJpc2WjLfSUtRxyYSb.jpg",
+      "release_date": "2025-08-20",
+      "title": "Afterburn",
+      "video": false,
+      "vote_average": 6.6,
+      "vote_count": 158
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/9MJifKtwH3hSDPSqguyvFfgdmtA.jpg",
+      "genre_ids": [
+        18
+      ],
+      "id": 1435092,
+      "original_language": "en",
+      "original_title": "Goodbye June",
+      "overview": "Four siblings' lives change drastically when their ailing mother takes a turn for the worse over the holiday season.",
+      "popularity": 13.9115,
+      "poster_path": "/ygsMOnttVCekvJZgvmnvaemxPHA.jpg",
+      "release_date": "2025-12-12",
+      "title": "Goodbye June",
+      "video": false,
+      "vote_average": 6.6,
+      "vote_count": 76
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/d10VuEOMroY7ngQi2FUhJH72k0e.jpg",
+      "genre_ids": [
+        16,
+        10751,
+        18
+      ],
+      "id": 1167307,
+      "original_language": "en",
+      "original_title": "David",
+      "overview": "From the songs of his mother’s heart to the whispers of a faithful God, David’s story begins in quiet devotion. When the giant Goliath rises to terrorize a nation, a young shepherd armed with only a sling, a few stones, and unshakable faith steps forward. Pursued by power and driven by purpose, his journey tests the limits of loyalty, love, and courage—culminating in a battle not just for a crown, but for the soul of a kingdom.",
+      "popularity": 16.0853,
+      "poster_path": "/7lFG1WrCwAxBfyGK8ahlBVzXno7.jpg",
+      "release_date": "2025-12-14",
+      "title": "David",
+      "video": false,
+      "vote_average": 8.1,
+      "vote_count": 16
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/5lZXIkRpOJICbWYJgImdbZ1vWx6.jpg",
+      "genre_ids": [
+        99
+      ],
+      "id": 1591516,
+      "original_language": "en",
+      "original_title": "Evil Influencer: The Jodi Hildebrandt Story",
+      "overview": "Unravel the case of Utah therapist Jodi Hildebrandt, whose child abuse arrest with parenting YouTuber Ruby Franke exposed a twisted tale of manipulation.",
+      "popularity": 14.7857,
+      "poster_path": "/rM3NLZgjs7vVWX3htMAWfwHypO8.jpg",
+      "release_date": "2025-12-30",
+      "title": "Evil Influencer: The Jodi Hildebrandt Story",
+      "video": false,
+      "vote_average": 6.283,
+      "vote_count": 30
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/nnx7q1ucLOfFrpAYvGmSEtbWf3L.jpg",
+      "genre_ids": [
+        80,
+        18,
+        53
+      ],
+      "id": 1220564,
+      "original_language": "pt",
+      "original_title": "O Agente Secreto",
+      "overview": "In 1977 Brazil, technology specialist Marcelo, fleeing a mysterious past, returns to Recife in search of peace, but realizes the city is far from the refuge he seeks.",
+      "popularity": 15.4572,
+      "poster_path": "/rZqolYhxMEe6TZZTjSmFw9crDTD.jpg",
+      "release_date": "2025-07-23",
+      "title": "The Secret Agent",
+      "video": false,
+      "vote_average": 7.912,
+      "vote_count": 130
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/rz8NcfTRczvn94vpnmMx42zt6EC.jpg",
+      "genre_ids": [
+        53,
+        18
+      ],
+      "id": 1042834,
+      "original_language": "en",
+      "original_title": "Eden",
+      "overview": "A group of disillusioned outsiders abandon modern society in search of a new beginning. Settling on a remote, uninhabited island, their utopian dream quickly unravels as they discover that the greatest threat isn’t the brutal climate or deadly wildlife, but each other.",
+      "popularity": 13.772,
+      "poster_path": "/jbFEESMVbpJU8IjZBjiWGJdEsxR.jpg",
+      "release_date": "2025-04-03",
+      "title": "Eden",
+      "video": false,
+      "vote_average": 6.719,
+      "vote_count": 510
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/AvYsEYnj8h0495UhBYEXqK7hkFo.jpg",
+      "genre_ids": [
+        35,
+        80,
+        18,
+        9648
+      ],
+      "id": 1287571,
+      "original_language": "id",
+      "original_title": "Agak Laen: Menyala Pantiku!",
+      "overview": "After repeatedly failing their missions, Detectives Bene, Boris, Jegel, and Oki are given one last chance: to go undercover in a nursing home in search of a fugitive wanted for the murder of the mayor’s child.",
+      "popularity": 12.3247,
+      "poster_path": "/fPJ9OjLgAQoLZrPeL6ZfQwNkfPK.jpg",
+      "release_date": "2025-11-27",
+      "title": "Agak Laen: Menyala Pantiku!",
+      "video": false,
+      "vote_average": 8.2,
+      "vote_count": 5
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/mmd1HnuvAzFc4iuVJcnBrhDNEKr.jpg",
+      "genre_ids": [
+        27,
+        53
+      ],
+      "id": 694,
+      "original_language": "en",
+      "original_title": "The Shining",
+      "overview": "Jack Torrance accepts a caretaker job at the Overlook Hotel, where he, along with his wife Wendy and their son Danny, must live isolated from the rest of the world for the winter. But they aren't prepared for the madness that lurks within.",
+      "popularity": 13.7163,
+      "poster_path": "/uAR0AWqhQL1hQa69UDEbb2rE5Wx.jpg",
+      "release_date": "1980-05-23",
+      "title": "The Shining",
+      "video": false,
+      "vote_average": 8.206,
+      "vote_count": 18466
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/i1Aa25l2TtKwp528wM5g2MK4ER6.jpg",
+      "genre_ids": [
+        18,
+        10749
+      ],
+      "id": 1134463,
+      "original_language": "es",
+      "original_title": "Dreams",
+      "overview": "Romance blossoms between a wealthy socialite and a Mexican ballet dancer, intertwining their contrasting lives and cultures.",
+      "popularity": 14.5509,
+      "poster_path": "/k18RLaw3Z7kx82lK9V3FzNyJgiH.jpg",
+      "release_date": "2025-07-10",
+      "title": "Dreams",
+      "video": false,
+      "vote_average": 5.708,
+      "vote_count": 24
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/jOuu4mEBOuJVb6CkkmRDpjnrZed.jpg",
+      "genre_ids": [
+        27,
+        9648
+      ],
+      "id": 937941,
+      "original_language": "en",
+      "original_title": "Shelby Oaks",
+      "overview": "A woman's obsessive search for her missing sister leads her into a terrifying mystery at the hands of an unknown evil.",
+      "popularity": 13.7365,
+      "poster_path": "/i3omY4P6QUzFQlEeclWY92RuXCH.jpg",
+      "release_date": "2025-10-02",
+      "title": "Shelby Oaks",
+      "video": false,
+      "vote_average": 5.8,
+      "vote_count": 171
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/3Gjo73aMqNWxNdBa7PeEj7AXJ3E.jpg",
+      "genre_ids": [
+        16,
+        35,
+        12,
+        53
+      ],
+      "id": 1107216,
+      "original_language": "fr",
+      "original_title": "Falcon Express",
+      "overview": "When a train unexpectedly starts up, taking only pets with it, the animals discover that Hans, a badger with a grudge is behind it all. While the crash seems inevitable, the animals can count on Falcon, a roguish Raccoon who will do anything to save them.",
+      "popularity": 12.8822,
+      "poster_path": "/xSibLTRfsUQagQnbOQLjp5oGbcq.jpg",
+      "release_date": "2025-07-02",
+      "title": "Pets on a Train",
+      "video": false,
+      "vote_average": 6.9,
+      "vote_count": 31
+    }
+  ],
+  "total_pages": 214,
+  "total_results": 4272
+}
