@@ -1,6 +1,6 @@
 import pool from "../db/pool.js";
-
 import { Movie } from "../types/movie.js";
+
 
 export type DiscoverParams = {
   genres?: number[];

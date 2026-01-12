@@ -2,11 +2,11 @@
   "name": "backend-3",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
     "dev": "node --loader ts-node/esm src/server.ts",
     "build": "tsc",
-    "start": "node dist/server.js",
+    "start": "node dist/server.ts",
     "scratch": "ts-node scripts/seedMovies.ts"
   },
   "keywords": [],
