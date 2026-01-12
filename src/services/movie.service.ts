@@ -1,54 +1,50 @@
-import pool from "../db/pool.js"
+import pool from "../db/pool.js";
 
-import { Movie } from "../types/movie.js"
+import { Movie } from "../types/movie.js";
 
 export type DiscoverParams = {
-  genres?: number[]
-  minRating?: number
-  fromDate?: string
-  page?: number
-  limit?: number
-}
+  genres?: number[];
+  minRating?: number;
+  fromDate?: string;
+  page?: number;
+  limit?: number;
+};
 
 export type Keyword = {
-  id: number
-  name: string
-}
+  id: number;
+  name: string;
+};
 export type MovieVideo = {
-  id: string
-  name: string
-  key: string
-  site: string
-  type: string
-  size: number | null
-  official: boolean | null
-  published_at: string | null
-  iso_639_1: string | null
-  iso_3166_1: string | null
-}
-
-
+  id: string;
+  name: string;
+  key: string;
+  site: string;
+  type: string;
+  size: number | null;
+  official: boolean | null;
+  published_at: string | null;
+  iso_639_1: string | null;
+  iso_3166_1: string | null;
+};
 
 export type CastMember = {
-  id: number
-  name: string
-  character: string
-  profile_path: string | null
-}
+  id: number;
+  name: string;
+  character: string;
+  profile_path: string | null;
+};
 
 export const fetchMovies = async (): Promise<Movie[]> => {
   const { rows } = await pool.query(
     `SELECT id, title, vote_average AS rating
      FROM movies
      ORDER BY release_date DESC`
-  )
+  );
 
-  return rows
-}
+  return rows;
+};
 
-export const fetchMovieById = async (
-  id: number
-): Promise<Movie | null> => {
+export const fetchMovieById = async (id: number): Promise<Movie | null> => {
   const { rows } = await pool.query(
     `
     SELECT
@@ -68,52 +64,50 @@ export const fetchMovieById = async (
     WHERE id = $1
     `,
     [id]
-  )
+  );
 
-  return rows[0] ?? null
-}
+  return rows[0] ?? null;
+};
 
-export const searchMoviesService = async (
-  query: string
-): Promise<Movie[]> => {
+export const searchMoviesService = async (query: string): Promise<Movie[]> => {
   const { rows } = await pool.query(
     `SELECT id, title, vote_average AS rating
      FROM movies
      WHERE title ILIKE $1
      ORDER BY vote_average DESC`,
     [`%${query}%`]
-  )
+  );
 
-  return rows
-}
+  return rows;
+};
 
 export const discoverMovies = async ({
   genres,
   minRating,
   fromDate,
   page = 1,
-  limit = 20
+  limit = 20,
 }: {
-  genres?: number[]
-  minRating?: number
-  fromDate?: string
-  page?: number
-  limit?: number
+  genres?: number[];
+  minRating?: number;
+  fromDate?: string;
+  page?: number;
+  limit?: number;
 }) => {
-  const offset = (page - 1) * limit
+  const offset = (page - 1) * limit;
 
-  const conditions: string[] = []
-  const values: any[] = []
-  let idx = 1
+  const conditions: string[] = [];
+  const values: any[] = [];
+  let idx = 1;
 
   if (minRating) {
-    conditions.push(`m.vote_average >= $${idx++}`)
-    values.push(minRating)
+    conditions.push(`m.vote_average >= $${idx++}`);
+    values.push(minRating);
   }
 
   if (fromDate) {
-    conditions.push(`m.release_date >= $${idx++}`)
-    values.push(fromDate)
+    conditions.push(`m.release_date >= $${idx++}`);
+    values.push(fromDate);
   }
 
   if (genres && genres.length) {
@@ -123,12 +117,12 @@ export const discoverMovies = async ({
         FROM movie_genres
         WHERE genre_id = ANY($${idx++})
       )
-    `)
-    values.push(genres)
+    `);
+    values.push(genres);
   }
 
   const where =
-    conditions.length > 0 ? `WHERE ${conditions.join(" AND ")}` : ""
+    conditions.length > 0 ? `WHERE ${conditions.join(" AND ")}` : "";
 
   const { rows } = await pool.query(
     `
@@ -144,35 +138,35 @@ export const discoverMovies = async ({
     LIMIT $${idx++} OFFSET $${idx}
     `,
     [...values, limit, offset]
-  )
+  );
 
-  return rows
-}
+  return rows;
+};
 
 export const fetchMovieList = async (
   listType: string,
   page = 1,
   limit = 20
 ) => {
-  const offset = (page - 1) * limit
+  const offset = (page - 1) * limit;
 
-  let where = ""
-  let orderBy = "vote_average DESC"
+  let where = "";
+  let orderBy = "vote_average DESC";
 
   switch (listType) {
     case "popular":
-      orderBy = "vote_average DESC"
-      break
+      orderBy = "vote_average DESC";
+      break;
     case "top_rated":
-      orderBy = "vote_average DESC"
-      break
+      orderBy = "vote_average DESC";
+      break;
     case "upcoming":
-      orderBy = "release_date ASC"
-      break
+      orderBy = "release_date ASC";
+      break;
     case "now_playing":
-      where = "WHERE release_date <= CURRENT_DATE"
-      orderBy = "release_date DESC"
-      break
+      where = "WHERE release_date <= CURRENT_DATE";
+      orderBy = "release_date DESC";
+      break;
   }
 
   const { rows } = await pool.query<Movie>(
@@ -189,11 +183,9 @@ export const fetchMovieList = async (
     LIMIT $1 OFFSET $2
     `,
     [limit, offset]
-  )
-  return rows
-}
-
-
+  );
+  return rows;
+};
 
 export const fetchMovieCastByMovieId = async (
   movieId: number
@@ -211,12 +203,10 @@ export const fetchMovieCastByMovieId = async (
     ORDER BY p.popularity DESC NULLS LAST
     `,
     [movieId]
-  )
+  );
 
-  return rows
-}
-
-
+  return rows;
+};
 
 export const fetchMovieKeywordsByMovieId = async (
   movieId: number
@@ -233,10 +223,10 @@ export const fetchMovieKeywordsByMovieId = async (
     ORDER BY k.name ASC
     `,
     [movieId]
-  )
+  );
 
-  return rows
-}
+  return rows;
+};
 
 export const fetchMovieVideosByMovieId = async (
   movieId: number
@@ -263,7 +253,7 @@ export const fetchMovieVideosByMovieId = async (
       v.published_at DESC NULLS LAST
     `,
     [movieId]
-  )
+  );
 
-  return rows
-}
+  return rows;
+};

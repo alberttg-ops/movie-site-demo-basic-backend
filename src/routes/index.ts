@@ -1,8 +1,8 @@
-import { Router } from "express"
-import movieRoutes from "./movie.routes.js"
+import { Router } from "express";
+import movieRoutes from "./movie.routes.js";
 
-const router = Router()
+const router = Router();
 
-router.use("/movies", movieRoutes)
+router.use("/movies", movieRoutes);
 
-export default router
+export default router;
