@@ -8,7 +8,7 @@ import {
   fetchMovieCastByMovieId,
   fetchMovieKeywordsByMovieId,
   fetchMovieVideosByMovieId
-} from "../services/movie.service.js"
+} from "../services/movie.service.ts"
 
 
 

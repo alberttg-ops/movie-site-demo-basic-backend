@@ -1,5 +1,5 @@
 import pool from "../db/pool.js";
-import { Movie } from "../types/movie.js";
+import { Movie } from "../types/movie.ts";
 
 
 export type DiscoverParams = {
@@ -68,6 +68,9 @@ export const fetchMovieById = async (id: number): Promise<Movie | null> => {
 
   return rows[0] ?? null;
 };
+
+
+
 
 export const searchMoviesService = async (query: string): Promise<Movie[]> => {
   const { rows } = await pool.query(

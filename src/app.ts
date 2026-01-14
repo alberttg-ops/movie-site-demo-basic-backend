@@ -1,9 +1,9 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
-import routes from "./routes/index.js";
-import errorHandler from "./middlewares/error.middleware.js";
-import { initDb } from "./db/init.js";
+import routes from "./routes/index.ts";
+import errorHandler from "./middlewares/error.middleware.ts";
+import { initDb } from "./db/init.ts";
 
 dotenv.config();
 

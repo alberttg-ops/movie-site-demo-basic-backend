@@ -7,7 +7,7 @@ import {
   getMovieCast,
   getMovieKeywords,
   getMovieVideos,
-} from "../controllers/movie.controller.js";
+} from "../controllers/movie.controller.ts";
 
 const router = Router();
 

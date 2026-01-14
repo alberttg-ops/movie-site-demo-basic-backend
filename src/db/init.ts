@@ -1,5 +1,5 @@
-import pool from "./pool.js"
+import pool from "./pool.ts"
 
 export const initDb = async () => {
-  await pool.query("SET search_path TO app")
+  await pool.query("SELECT * FROM app.movies;")
 }
