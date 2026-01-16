@@ -1,4 +1,7 @@
 import { Router } from "express";
+import authMiddleware from "../middlewares/auth0.middleware.ts"
+import validate from "../middlewares/validate.middleware.ts"
+import {MovieIdParamsSchema, MovieListTypeParamsSchema , PaginationQuerySchema, MoviePutBodySchema} from "../schema/index.ts"
 import {
   getMovies,
   getMovieById,
@@ -7,17 +10,23 @@ import {
   getMovieCast,
   getMovieKeywords,
   getMovieVideos,
+  updateMovieController,
+  createMovieHandler
 } from "../controllers/movie.controller.ts";
 
 const router = Router();
 
 router.get("/", getMovies);
-router.get("/search", searchMovies);
-router.get("/:id", getMovieById);
-router.get("/cast/:id", getMovieCast);
-router.get("/list/:listType", getMovieList);
+router.get("/search", authMiddleware, searchMovies);
+router.get("/:id", validate(MovieIdParamsSchema, "params") , authMiddleware,  getMovieById);
+router.get("/cast/:id", validate(MovieIdParamsSchema, "params") , authMiddleware, getMovieCast);
+router.get("/list/:listType",  validate(MovieListTypeParamsSchema , "params"), validate( PaginationQuerySchema , "query"),   getMovieList);
 
-router.get("/keyword/:id", getMovieKeywords);
-router.get("/videos/:id", getMovieVideos);
+router.get("/keyword/:id", validate(MovieIdParamsSchema, "params") , authMiddleware, getMovieKeywords);
+router.get("/videos/:id", validate(MovieIdParamsSchema, "params") , authMiddleware, getMovieVideos);
+
+router.put(  "/put/:id", validate(MovieIdParamsSchema, "params"), validate(MoviePutBodySchema, "body"), authMiddleware, updateMovieController);
+
+router.post("/post/:id", validate(MovieIdParamsSchema, "params"), validate(MoviePutBodySchema, "body"), authMiddleware, createMovieHandler);
 
 export default router;

@@ -1,40 +1,18 @@
-import pool from "../db/pool.js";
-import { Movie } from "../types/movie.ts";
+import {getPool} from "../db/pool.js";
+import { Movie, DiscoverParams, Keyword, MovieVideo, CastMember, MovieUpdateInput  } from "../types/movie.ts";
+
+import { getNextMovieId } from "../db/getNextMovieId.ts";
+
+import { z } from "zod";
+import { createMovieSchema } from "../schema/createMovieSchema.ts";
 
 
-export type DiscoverParams = {
-  genres?: number[];
-  minRating?: number;
-  fromDate?: string;
-  page?: number;
-  limit?: number;
-};
 
-export type Keyword = {
-  id: number;
-  name: string;
-};
-export type MovieVideo = {
-  id: string;
-  name: string;
-  key: string;
-  site: string;
-  type: string;
-  size: number | null;
-  official: boolean | null;
-  published_at: string | null;
-  iso_639_1: string | null;
-  iso_3166_1: string | null;
-};
-
-export type CastMember = {
-  id: number;
-  name: string;
-  character: string;
-  profile_path: string | null;
-};
+type CreateMovieInput = z.infer<typeof createMovieSchema>;
 
 export const fetchMovies = async (): Promise<Movie[]> => {
+  const pool = getPool();
+
   const { rows } = await pool.query(
     `SELECT id, title, vote_average AS rating
      FROM movies
@@ -45,6 +23,8 @@ export const fetchMovies = async (): Promise<Movie[]> => {
 };
 
 export const fetchMovieById = async (id: number): Promise<Movie | null> => {
+  const pool = getPool();
+
   const { rows } = await pool.query(
     `
     SELECT
@@ -73,6 +53,8 @@ export const fetchMovieById = async (id: number): Promise<Movie | null> => {
 
 
 export const searchMoviesService = async (query: string): Promise<Movie[]> => {
+  const pool = getPool();
+
   const { rows } = await pool.query(
     `SELECT id, title, vote_average AS rating
      FROM movies
@@ -97,6 +79,8 @@ export const discoverMovies = async ({
   page?: number;
   limit?: number;
 }) => {
+  const pool = getPool();
+
   const offset = (page - 1) * limit;
 
   const conditions: string[] = [];
@@ -151,6 +135,8 @@ export const fetchMovieList = async (
   page = 1,
   limit = 20
 ) => {
+  const pool = getPool();
+
   const offset = (page - 1) * limit;
 
   let where = "";
@@ -193,6 +179,8 @@ export const fetchMovieList = async (
 export const fetchMovieCastByMovieId = async (
   movieId: number
 ): Promise<CastMember[]> => {
+  const pool = getPool();
+
   const { rows } = await pool.query<CastMember>(
     `
     SELECT
@@ -214,6 +202,8 @@ export const fetchMovieCastByMovieId = async (
 export const fetchMovieKeywordsByMovieId = async (
   movieId: number
 ): Promise<Keyword[]> => {
+  const pool = getPool();
+
   const { rows } = await pool.query<Keyword>(
     `
     SELECT
@@ -234,6 +224,8 @@ export const fetchMovieKeywordsByMovieId = async (
 export const fetchMovieVideosByMovieId = async (
   movieId: number
 ): Promise<MovieVideo[]> => {
+  const pool = getPool();
+
   const { rows } = await pool.query<MovieVideo>(
     `
     SELECT
@@ -260,3 +252,90 @@ export const fetchMovieVideosByMovieId = async (
 
   return rows;
 };
+
+
+export const updateMovieService = async (
+  id: number,
+  data: MovieUpdateInput
+) => {
+  // example with SQL (pseudo / pg-style)
+  const pool = getPool(); 
+  const result = await pool.query(
+    `
+    UPDATE movies
+    SET
+      title = $1,
+      poster_path = COALESCE($2, poster_path),
+      release_date = COALESCE($3, release_date),
+      vote_average = COALESCE($4, vote_average)
+    WHERE id = $5
+    RETURNING *
+    `,
+    [
+      data.title,
+      data.poster_path ?? null,
+      data.release_date ?? null,
+      data.vote_average ?? null,
+      id,
+    ]
+  );
+
+  return result.rows[0] ?? null;
+};
+
+
+export async function createMovie(data: CreateMovieInput) {
+  const pool = getPool();
+  const client = await pool.connect();
+
+  try {
+    await client.query("BEGIN");
+
+    const id = await getNextMovieId(client);
+
+    const result = await client.query(
+      `
+      INSERT INTO movies (
+        id,
+        title,
+        overview,
+        poster_path,
+        backdrop_path,
+        release_date,
+        vote_average,
+        runtime,
+        status,
+        budget,
+        revenue,
+        tagline
+      )
+      VALUES (
+        $1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12
+      )
+      RETURNING *
+      `,
+      [
+        id,
+        data.title,
+        data.overview ?? null,
+        data.poster_path ?? null,
+        data.backdrop_path ?? null,
+        data.release_date ?? null,
+        data.vote_average ?? null,
+        data.runtime ?? null,
+        data.status ?? null,
+        data.budget ?? null,
+        data.revenue ?? null,
+        data.tagline ?? null,
+      ]
+    );
+
+    await client.query("COMMIT");
+    return result.rows[0];
+  } catch (err) {
+    await client.query("ROLLBACK");
+    throw err;
+  } finally {
+    client.release();
+  }
+}

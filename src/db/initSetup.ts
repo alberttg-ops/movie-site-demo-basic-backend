@@ -1,6 +1,8 @@
-import pool from "./pool.ts"
+import {getPool} from "./pool.ts"
 
-export async function initDb() {
+export async function initSetup() {
+    const pool = getPool();
+
   const client = await pool.connect()
 
   try {

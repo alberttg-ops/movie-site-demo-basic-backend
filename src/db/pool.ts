@@ -1,18 +1,23 @@
-import { Pool } from "pg"
-import dotenv from "dotenv"
-import "./pgTypes.ts"
+import { Pool } from "pg";
 
-dotenv.config()
+let pool: Pool | null = null;
 
-const pool = new Pool({
-  host: process.env.DB_HOST,
-  port: Number(process.env.DB_PORT),
-  database: process.env.DB_NAME,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  max: 10,
-  idleTimeoutMillis: 30000,
-  connectionTimeoutMillis: 5000
-})
+export function getPool(): Pool {
+  if (!pool) {
+    if (!process.env.DB_HOST) {
+      throw new Error("DB_HOST is not defined");
+    }
 
-export default pool
+    console.log("Creating DB pool with host:", process.env.DB_HOST);
+
+    pool = new Pool({
+      host: process.env.DB_HOST,
+      port: Number(process.env.DB_PORT),
+      database: process.env.DB_NAME,
+      user: process.env.DB_USER,
+      password: process.env.DB_PASSWORD,
+    });
+  }
+
+  return pool;
+}

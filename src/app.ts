@@ -6,6 +6,8 @@ import errorHandler from "./middlewares/error.middleware.ts";
 import { initDb } from "./db/init.ts";
 
 dotenv.config();
+console.log("AUTH0_DOMAIN =", process.env.AUTH0_DOMAIN);
+console.log("AUTH0_AUDIENCE =", process.env.AUTH0_AUDIENCE);
 
 const app = express();
 

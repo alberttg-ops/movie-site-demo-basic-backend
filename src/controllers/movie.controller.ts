@@ -7,10 +7,12 @@ import {
   fetchMovieList,
   fetchMovieCastByMovieId,
   fetchMovieKeywordsByMovieId,
-  fetchMovieVideosByMovieId
+  fetchMovieVideosByMovieId,
+  updateMovieService,
+  createMovie
 } from "../services/movie.service.ts"
 
-
+import { createMovieSchema } from "../schema/createMovieSchema.ts";
 
 
 
@@ -42,6 +44,7 @@ export const getMovieById = async (
       notFound: false,
     })
   } catch (err) {
+    console.log(err);
     next(err)
   }
 }
@@ -167,5 +170,38 @@ export const getMovieVideos = async (
     res.json(videos)
   } catch (err) {
     next(err)
+  }
+}
+
+export const updateMovieController = async (
+  req: Request,
+  res: Response
+) => {
+  const { id } = req.params;
+  const data = req.body;
+
+  const updatedMovie = await updateMovieService(Number(id), data);
+
+  if (!updatedMovie) {
+    return res.status(404).json({ error: "Movie not found" });
+  }
+
+  return res.status(200).json(updatedMovie);
+};
+
+
+
+export async function createMovieHandler(
+  req: Request,
+  res: Response,
+  next: NextFunction
+) {
+  try {
+    const payload = createMovieSchema.parse(req.body);
+    const movie = await createMovie(payload);
+
+    res.status(201).json(movie);
+  } catch (err) {
+    next(err);
   }
 }
