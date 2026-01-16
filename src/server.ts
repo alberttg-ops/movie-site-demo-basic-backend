@@ -27,7 +27,21 @@ async function bootstrap() {
   const app = express();
 
   app.use(cors());
+
+  app.disable("etag")        
+  
   app.use(express.json());
+
+  //disabling cache
+  app.use((_, res, next) => {
+  res.setHeader("Cache-Control", "no-store, no-cache, must-revalidate, proxy-revalidate")
+  res.setHeader("Pragma", "no-cache")
+  res.setHeader("Expires", "0")
+  res.setHeader("Surrogate-Control", "no-store")
+  next()
+})
+
+
 
   // 3️⃣ Routes
   app.use("/api", routes);

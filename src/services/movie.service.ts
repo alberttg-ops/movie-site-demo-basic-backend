@@ -56,7 +56,7 @@ export const searchMoviesService = async (query: string): Promise<Movie[]> => {
   const pool = getPool();
 
   const { rows } = await pool.query(
-    `SELECT id, title, vote_average AS rating
+    `SELECT id, title, overview, release_date, vote_average, poster_path
      FROM movies
      WHERE title ILIKE $1
      ORDER BY vote_average DESC`,
