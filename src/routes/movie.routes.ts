@@ -22,7 +22,7 @@ import {
 const router = Router();
 
 router.get("/", getMovies);
-router.get("/search", validate( MovieSearchQuerySchema , "query"), authMiddleware, searchMovies);
+router.get("/search", validate( MovieSearchQuerySchema , "query"), searchMovies);
 router.get("/:id", validate(MovieIdParamsSchema, "params") , authMiddleware,  getMovieById);
 router.get("/cast/:id", validate(MovieIdParamsSchema, "params") , authMiddleware, getMovieCast);
 router.get("/list/:listType",  validate(MovieListTypeParamsSchema , "params"), validate( PaginationQuerySchema , "query"),   getMovieList);

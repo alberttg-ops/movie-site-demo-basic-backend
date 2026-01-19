@@ -56,8 +56,8 @@ export const searchMovies = async (
   next: NextFunction
 ) => {
   try {
-    const q = req.query.q as string
-    const results = await searchMoviesService(q)
+    const query = req.query.query as string
+    const results = await searchMoviesService(query)
     res.json(results)
   } catch (err) {
     next(err)

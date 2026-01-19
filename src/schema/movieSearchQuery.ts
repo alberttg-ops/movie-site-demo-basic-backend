@@ -1,7 +1,7 @@
 import { z } from "zod";
 
 export const MovieSearchQuerySchema = z.object({
-  q: z
+  query: z
     .string()
     .min(1)
     .regex(/^[a-zA-Z0-9].*$/, {
